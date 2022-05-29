@@ -115,6 +115,9 @@ span {
   cursor: pointer;
 }
 
+img {
+  border-radius: 20px;
+}
 /* Our Suggestion Section*/
 .suggest {
   width: 100%;
