@@ -5,6 +5,7 @@
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
+
 .hero {
   background-color: black;
   width: 100%;
@@ -540,4 +541,106 @@ nav.sticky {
   padding-right: 12%;
   width: 100%;
   background-color: black;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ccc;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  /* background-color: red; */
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  /* background-color: red; */
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  /* background-color: white; */
+  transform: scale(0);
+}
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .logo {
+    font-size: 30px;
+  }
+
+  .main-text h1 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 35px;
+  }
+  .main-text p {
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 30px 0;
+  }
+
+  /* nav ul li a {
+    display: none;
+  } */
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    right: 0;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
