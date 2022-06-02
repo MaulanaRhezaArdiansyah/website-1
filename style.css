@@ -596,7 +596,7 @@ nav.sticky {
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 576px) {
   .logo {
     font-size: 30px;
   }
